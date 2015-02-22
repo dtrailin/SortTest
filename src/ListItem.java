@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Random;
 
-public class ListItem {
+public class ListItem implements Comparable<Object>{
 
 	private Integer x;
 	private String word;
@@ -32,6 +32,22 @@ public class ListItem {
 
 	public int getX() {
 		return x;
+	}
+
+
+
+	
+
+	@Override
+	public int compareTo(Object o) {
+	 
+	        if (this.getX() == ((ListItem) o).getX())
+	            return 0;
+	        else if ((this.getX()) > ((ListItem) o).getX())
+	            return 1;
+	        else
+	            return -1;
+	    
 	}
 
 }

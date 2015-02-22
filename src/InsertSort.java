@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -5,19 +6,19 @@ public class InsertSort implements SortInterface {
 
 	@Override
 	public List<ListItem> sort(List<ListItem> list) {
-
+		List<ListItem> newList =  new ArrayList<ListItem>(list);
 	    int i, j;
 		ListItem newValue;
-	      for (i = 1; i < list.size(); i++) {
-	            newValue = list.get(i);
+	      for (i = 1; i < newList.size(); i++) {
+	            newValue = newList.get(i);
 	            j = i;
-	            while (j > 0 &&  list.get(j - 1).getX() > newValue.getX()) {
-	            	list.set(j, list.get(j-1 )); 
+	            while (j > 0 &&  newList.get(j - 1).getX() > newValue.getX()) {
+	            	newList.set(j, newList.get(j-1 )); 
 	                  j--;
 	            }
-	            list.set(j, newValue);
+	            newList.set(j, newValue);
 	      }
-	      return list;
+	      return newList;
 	}
 		
 		

@@ -2,6 +2,8 @@ import java.util.List;
 
 public class ListTest {
 
+	
+	
 	public static void main(String[] args) {
 
 		int listSize = 0;
@@ -14,26 +16,34 @@ public class ListTest {
 		    }
 		}
 		
-		List<ListItem> unsortedList;
-		
+		 
+		 List<ListItem> unsortedList;
 		
 		
 		ListGenerator listGen = new ListGenerator();
 
 		unsortedList = listGen.generate(listSize);
 		System.out.println("list generated");
+		
+		
 
 		InsertSort s = new InsertSort();
+		
 		QuickSort qs = new QuickSort();
-
-		printSortTime(s,unsortedList);
-		printSortTime(qs,unsortedList);
+		MergeSort m = new MergeSort();
 
 		
+		printSortTime(m,unsortedList);
+		
+		printSortTime(qs,unsortedList);
+		printSortTime(s,unsortedList);
+		
+	
 		
 	}
 
 	public static long sortTime(SortInterface x,List<ListItem> list ) {
+		
 		
 		long startTime = System.nanoTime();
 		x.sort(list);
@@ -50,12 +60,14 @@ public class ListTest {
 		System.out.println( sortTime(x, list) + " ms");
 	}
 	
-	public void printList(List<ListItem> list){
+	public static void printList(List<ListItem> list){
 		
 		for (ListItem i : list) {
 			System.out.println(i.getWord());
 		}
-
+		System.out.println("");
+		
 	}
+	
 
 }
