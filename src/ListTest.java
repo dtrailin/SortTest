@@ -6,7 +6,7 @@ public class ListTest {
 	
 	public static void main(String[] args) {
 
-		int listSize = 0;
+		int listSize = 1000;
 		if (args.length > 0) {
 		    try {
 		    	listSize = Integer.parseInt(args[0]);
@@ -32,7 +32,7 @@ public class ListTest {
 		QuickSort qs = new QuickSort();
 		MergeSort m = new MergeSort();
 
-		
+			
 		printSortTime(m,unsortedList);
 		
 		printSortTime(qs,unsortedList);
@@ -58,6 +58,16 @@ public class ListTest {
 		
 		System.out.println(x.GetName() + " time:");
 		System.out.println( sortTime(x, list) + " ms");
+	}
+	
+	public static boolean verifySort(List<ListItem> list){
+		for (int i = 0; i < list.size() - 1; i++){
+			
+			if (list.get(i).getX() > list.get(i + 1 ).getX()){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public static void printList(List<ListItem> list){
