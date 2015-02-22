@@ -12,10 +12,10 @@ public class ListGenerator {
 		numberUsed = new ArrayList<Integer>();
 	}
 	
-	public List<ListItem> generate(int size){
+	public List<ListItem> generate(int size, boolean repeat){
 		
 		for (int i = 0; i < size; i++ ){
-			ListItem e = new ListItem(numberUsed, size );
+			ListItem e = new ListItem(numberUsed, size,repeat );
 			list.add(e);
 		
 			numberUsed.add(e.getX());
