@@ -4,7 +4,7 @@ public class ListTest {
 
 	public static void main(String[] args) {
 
-		int listSize = 0;
+		int listSize = 100;
 		boolean repeat = true;
 		if (args.length > 0) {
 			try {
@@ -30,10 +30,13 @@ public class ListTest {
 		InsertSort s = new InsertSort();
 		QuickSort qs = new QuickSort();
 		MergeSort m = new MergeSort();
-
+		HeapSort h = new HeapSort();
+	
 		printSortTime(m, unsortedList);
 		printSortTime(qs, unsortedList);
+		printSortTime(h, unsortedList);
 		printSortTime(s, unsortedList);
+		
 
 	}
 
